@@ -1,0 +1,32 @@
+/* CSS for Pathfinder Project */
+
+body{
+	font-family: "Pier Sans";
+}
+
+#titlecont{
+	font-family: "Pier Sans";
+	margin: 10;
+}
+
+h1{
+	font-size: 40pt;
+}
+
+h3{
+	font-size : 12pt;
+}
+
+.btn-default{
+	height: 50px;
+	font-size: 16pt;
+}
+
+#contentbox{
+	text-align: center;
+	margin-top: 100px;
+}
+
+#answers{
+	margin-top: 30px;
+}
