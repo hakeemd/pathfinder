@@ -1,5 +1,6 @@
 (function() {
-  var questions = [{
+  
+    var questions = [{
     question: "Do you prefer practical or theoretical courses?",
     choices1: ["Practical", "Theoretical"],
     //correctAnswer: 2
@@ -174,10 +175,24 @@
   function displayScore() {
     var score = $('<p>',{id: 'question'});
     
+<<<<<<< Updated upstream
 /*
+=======
+ //Computes number of correct answers
+>>>>>>> Stashed changes
     var numCorrect = 0;
+      
+    var extrovert = 0;
+    var introvert = 0;
+    var sensors = 0;
+    var intuitive = 0;
+    var thinker = 0;
+    var feeler = 0;
+    var judger = 0;
+    var perceiver = 0;
+    
     for (var i = 0; i < selections.length; i++) {
-      if (selections[i] === questions[i].correctAnswer) {
+      if (selections[i] === choices1[0]) {
         numCorrect++;
       }
     }
@@ -227,7 +242,36 @@
 		    extrovert++;
 	    }
     }
-    
+      
+      var aoi = 0;
+      var dm = 0;
+      var org = 0;
+      var iww = 0;
+      
+      if (sensors >= 2){
+          aoi == 0;
+      } else {
+          aoi == 1;
+      }
+      
+      if (thinkers >= 2){
+         dm == 0; 
+      } else {
+          dm == 1;
+      }
+      
+      if (judgers >= 2) {
+          org == 0;
+      } else {
+          org == 1;
+      }
+      
+      if (introverts >= 2){
+          iww == 0;
+      } else {
+          iww == 1;
+      }
+      
     
     score.append('You got ' + numCorrect + ' questions out of ' +
                  questions.length + ' right!!!');
