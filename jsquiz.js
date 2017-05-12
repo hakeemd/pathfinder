@@ -2,45 +2,45 @@
   
     var questions = [{
     question: "Do you prefer practical or theoretical courses?",
-    choices1: ["Practical", "Theoretical"],
+    choices: ["Practical", "Theoretical"],
     //correctAnswer: 2
   }, {
     question: "Do you have a lot of fantasy or are you more a realistic person?",
-    choices1: ["Realistic", "Fantasy"],
+    choices: ["Realistic", "Fantasy"],
     //correctAnswer: 4
   }, {
     question: "How often do you experience problems with bumping into things, losing stuff or other unimportant problems related to physical awareness?",
-    choices1: ["Sometimes", "Quite often"],
+    choices: ["Sometimes", "Quite often"],
     //correctAnswer: 0
   }, {
     question: "Which of the following best describes you when it comes to making decisions?",
-    choices2: ["I often make snap decisions and rarely think them through.", "I’m less likely to make rash decisions and would rely heavily on my intuition, feeling and reactions in making a decision."],
+    choices: ["I often make snap decisions and rarely think them through.", "I’m less likely to make rash decisions and would rely heavily on my intuition, feeling and reactions in making a decision."],
     //correctAnswer: 3
   }, {
     question: "Which of the following best describes you during a group discussion or group decision    making?",
-    choices2: ["I gravitate toward groups and constant action, and I tend to think out loud and mostly vocal with my opinions.", "I tend to prefer quiet solitude, time to think before speaking (or acting), and building relationships and trust one-on-one."],
+    choices: ["I gravitate toward groups and constant action, and I tend to think out loud and mostly vocal with my opinions.", "I tend to prefer quiet solitude, time to think before speaking (or acting), and building relationships and trust one-on-one."],
     //correctAnswer: 4
   }, {
       question: "I mostly enjoy,",
-      choices2: ["Personal interactions, social gatherings, and sharing my ideas effectively before making decisions.", "Reflection and deep dives into my own inner landscape to research ideas, and I tend to focus deeply on work."],
+      choices: ["Personal interactions, social gatherings, and sharing my ideas effectively before making decisions.", "Reflection and deep dives into my own inner landscape to research ideas, and I tend to focus deeply on work."],
   }, {
       question: "Do you like to volunteer or involve yourself in new activities offered by your workplace?",
-      choices3: ["Yes, I love to volunteer!", "If there’s someone else who can do it, I don’t see why I should."],
+      choices: ["Yes, I love to volunteer!", "If there’s someone else who can do it, I don’t see why I should."],
   }, {
       question: "Which of the following best describes you?",
-      choices3: ["I often involve myself in those group chats my co-workers set up, even if its just for the sake of making jokes with my co-workers.", "I rarely reply to the group chats unless very necessary."],
+      choices: ["I often involve myself in those group chats my co-workers set up, even if its just for the sake of making jokes with my co-workers.", "I rarely reply to the group chats unless very necessary."],
   }, {
       question: "Before I start the day at work, I tend to..",
-      choices3: ["Ease into the workday by sorting and planning alone for the first half an hour.", "Rather meet with people and start the day off running. I’m more productive when I can bounce ideas off others during the workday."]
+      choices: ["Ease into the workday by sorting and planning alone for the first half an hour.", "Rather meet with people and start the day off running. I’m more productive when I can bounce ideas off others during the workday."]
   }, {
       questions: "If you are walking on a crowded street, which one do you tend to do?",
-      choices4: ["Paying attention to your phone as you walk.", "Walk casually and look at your surroundings."]
+      choices: ["Paying attention to your phone as you walk.", "Walk casually and look at your surroundings."]
   }, {
       questions: "Which one best describes yourself when you are in a large gathering or party?",
-      choices4: ["Make your own space for yourself.", "Talk to someone around you."]
+      choices: ["Make your own space for yourself.", "Talk to someone around you."]
   }, {
       questions: "You will work effectively when ...",
-      choices4: ["You are in a quiet environment.", "You are in a space full of people / noise."]
+      choices: ["You are in a quiet environment.", "You are in a space full of people / noise."]
   }];
   
   var questionCounter = 0; //Tracks question number
@@ -174,29 +174,6 @@
   // Computes score and returns a paragraph element to be displayed
   function displayScore() {
     var score = $('<p>',{id: 'question'});
-    
-<<<<<<< Updated upstream
-/*
-=======
- //Computes number of correct answers
->>>>>>> Stashed changes
-    var numCorrect = 0;
-      
-    var extrovert = 0;
-    var introvert = 0;
-    var sensors = 0;
-    var intuitive = 0;
-    var thinker = 0;
-    var feeler = 0;
-    var judger = 0;
-    var perceiver = 0;
-    
-    for (var i = 0; i < selections.length; i++) {
-      if (selections[i] === choices1[0]) {
-        numCorrect++;
-      }
-    }
-*/
     
     var sensors = 0;
     var intuitive = 0;
