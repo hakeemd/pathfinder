@@ -1,5 +1,5 @@
 (function() {
-
+    $.ajaxSetup({ cache: false });
     var questions = [{
     question: "Do you prefer practical or theoretical courses?",
     choices: ["Practical", "Theoretical"],
@@ -162,8 +162,9 @@
           $('#next').show();
         }
       }else {
-        console.log("masuk");
+        console.log("inside else");
         displayScore();
+        //var scoreElem = displayScore();
         //quiz.append(scoreElem).fadeIn();
         $('#next').hide();
         $('#prev').hide();
@@ -174,7 +175,7 @@
 
   // Computes score and returns a paragraph element to be displayed
   function displayScore() {
-    console.log("asdasdasdasd");
+    console.log("inside displayScore");
     var result = $('<p>',{id: 'question'});
 
     var sensors = 0;
@@ -252,40 +253,23 @@
       }
 
       console.log(iww, aoi, dm, org);
-    $.post('/WIS_Project/php/description.php', {iww:iww, aoi:aoi, dm:dm, org:org},
+    $.post('/WIS_Project/php/answer.php', {iww:iww, aoi:aoi, dm:dm, org:org},
                                            function(data){
-      $('div#description').text(data);
+      console.log(data);
+      var data = JSON.parse(data);
+      $('div#description').text(data.description);
+      $('div#answer1').text(data.answer1);
+      $('div#answer2').text(data.answer2);
+      $('div#answer3').text(data.answer3);
+      $('div#answer4').text(data.answer4);
+      $('div#answer5').text(data.answer5);
     });
 
-    $.post('/WIS_Project/php/answer1.php', {iww:iww, aoi:aoi, dm:dm, org:org},
-                                           function(data){
-      $('div#answer1').text(data);
-    });
-
-    $.post('/WIS_Project/php/answer2.php', {iww:iww, aoi:aoi, dm:dm, org:org},
-                                           function(data){
-      $('div#answer2').text(data);
-    });
-
-    $.post('/WIS_Project/php/answer3.php', {iww:iww, aoi:aoi, dm:dm, org:org},
-                                           function(data){
-      $('div#answer3').text(data);
-    });
-
-    $.post('/WIS_Project/php/answer4.php', {iww:iww, aoi:aoi, dm:dm, org:org},
-                                           function(data){
-      $('div#answer4').text(data);
-    });
-
-    $.post('/WIS_Project/php/answer5.php', {iww:iww, aoi:aoi, dm:dm, org:org},
-                                           function(data){
-      $('div#answer5').text(data);
-    });
-
-
-    /*result.append('You got ' + numCorrect + ' questions out of ' +
+    /*
+    result.append('You got ' + numCorrect + ' questions out of ' +
                  questions.length + ' right!!!');
-    return score;*/
+    return score;
+    */
 
   }
 })();
