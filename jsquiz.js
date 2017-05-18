@@ -1,5 +1,5 @@
 (function() {
-  
+
     var questions = [{
     question: "Do you prefer practical or theoretical courses?",
     choices: ["Practical", "Theoretical"],
@@ -42,24 +42,24 @@
       questions: "You will work effectively when ...",
       choices: ["You are in a quiet environment.", "You are in a space full of people / noise."]
   }];
-  
+
   var questionCounter = 0; //Tracks question number
   var selections = []; //Array containing user choices
   var quiz = $('#quiz'); //Quiz div object
-  
+
   // Display initial question
   displayNext();
-  
+
   // Click handler for the 'next' button
   $('#next').on('click', function (e) {
     e.preventDefault();
-    
+
     // Suspend click listener during fade animation
-    if(quiz.is(':animated')) {        
+    if(quiz.is(':animated')) {
       return false;
     }
     choose();
-    
+
     // If no user selection, progress is stopped
     if (isNaN(selections[questionCounter])) {
       alert('Please make a selection!');
@@ -68,11 +68,11 @@
       displayNext();
     }
   });
-  
+
   // Click handler for the 'prev' button
   $('#prev').on('click', function (e) {
     e.preventDefault();
-    
+
     if(quiz.is(':animated')) {
       return false;
     }
@@ -80,11 +80,11 @@
     questionCounter--;
     displayNext();
   });
-  
+
   // Click handler for the 'Start Over' button
   $('#start').on('click', function (e) {
     e.preventDefault();
-    
+
     if(quiz.is(':animated')) {
       return false;
     }
@@ -93,7 +93,7 @@
     displayNext();
     $('#start').hide();
   });
-  
+
   // Animates buttons on hover
   $('.button').on('mouseenter', function () {
     $(this).addClass('active');
@@ -101,26 +101,26 @@
   $('.button').on('mouseleave', function () {
     $(this).removeClass('active');
   });
-  
-  // Creates and returns the div that contains the questions and 
+
+  // Creates and returns the div that contains the questions and
   // the answer selections
   function createQuestionElement(index) {
     var qElement = $('<div>', {
       id: 'question'
     });
-    
+
     var header = $('<h2>Question ' + (index + 1) + ':</h2>');
     qElement.append(header);
-    
+
     var question = $('<p>').append(questions[index].question);
     qElement.append(question);
-    
+
     var radioButtons = createRadios(index);
     qElement.append(radioButtons);
-    
+
     return qElement;
   }
-  
+
   // Creates a list of the answer choices as radio inputs
   function createRadios(index) {
     var radioList = $('<ul>');
@@ -135,46 +135,48 @@
     }
     return radioList;
   }
-  
+
   // Reads the user selection and pushes the value to an array
   function choose() {
     selections[questionCounter] = +$('input[name="answer"]:checked').val();
   }
-  
+
   // Displays next requested element
   function displayNext() {
     quiz.fadeOut(function() {
       $('#question').remove();
-      
+
       if(questionCounter < questions.length){
         var nextQuestion = createQuestionElement(questionCounter);
         quiz.append(nextQuestion).fadeIn();
         if (!(isNaN(selections[questionCounter]))) {
           $('input[value='+selections[questionCounter]+']').prop('checked', true);
         }
-        
+
         // Controls display of 'prev' button
         if(questionCounter === 1){
           $('#prev').show();
         } else if(questionCounter === 0){
-          
+
           $('#prev').hide();
           $('#next').show();
         }
       }else {
-        var scoreElem = displayScore();
-        quiz.append(scoreElem).fadeIn();
+        console.log("masuk");
+        displayScore();
+        //quiz.append(scoreElem).fadeIn();
         $('#next').hide();
         $('#prev').hide();
         $('#start').show();
       }
     });
   }
-  
+
   // Computes score and returns a paragraph element to be displayed
   function displayScore() {
-    var score = $('<p>',{id: 'question'});
-    
+    console.log("asdasdasdasd");
+    var result = $('<p>',{id: 'question'});
+
     var sensors = 0;
     var intuitive = 0;
     var feelers = 0;
@@ -183,7 +185,7 @@
     var judger = 0;
     var introvert = 0;
     var extrovert = 0;
-    
+
     for (var i = 0; i <= 2; i++){
 	    if (selections[i] === questions[i].choices[0]){
 		    sensors++;
@@ -192,7 +194,7 @@
 		    intuitive++;
 	    }
     }
-    
+
     for (var i=3; i<=5; i++){
 	    if (selections[i] === questions[i].choices[0]){
 		    feelers++;
@@ -201,7 +203,7 @@
 		    thinkers++;
 	    }
     }
-    
+
     for (var i=6; i<=8; i++){
 	    if (selections[i] === questions[i].choices[0]){
 		    perceiver++;
@@ -210,7 +212,7 @@
 		    judger++;
 	    }
     }
-    
+
     for (var i=9; i<=11; i++){
 	    if (selections[i] === questions[i].choices[0]){
 		    introvert++;
@@ -219,39 +221,71 @@
 		    extrovert++;
 	    }
     }
-      
-      var aoi = 0;
-      var dm = 0;
-      var org = 0;
-      var iww = 0;
-      
+
+      var iww = "1";
+      var aoi = "0";
+      var dm = "1";
+      var org = "0";
+
+      if (introvert >= 2){
+          iww == "0";
+      } else {
+          iww == "1";
+      }
+
       if (sensors >= 2){
-          aoi == 0;
+          aoi == "0";
       } else {
-          aoi == 1;
+          aoi == "1";
       }
-      
+
       if (thinkers >= 2){
-         dm == 0; 
+         dm == "0";
       } else {
-          dm == 1;
+          dm == "1";
       }
-      
-      if (judgers >= 2) {
-          org == 0;
+
+      if (judger >= 2) {
+          org == "0";
       } else {
-          org == 1;
+          org == "1";
       }
-      
-      if (introverts >= 2){
-          iww == 0;
-      } else {
-          iww == 1;
-      }
-      
-    
-    score.append('You got ' + numCorrect + ' questions out of ' +
+
+      console.log(iww, aoi, dm, org);
+    $.post('/WIS_Project/php/description.php', {iww:iww, aoi:aoi, dm:dm, org:org},
+                                           function(data){
+      $('div#description').text(data);
+    });
+
+    $.post('/WIS_Project/php/answer1.php', {iww:iww, aoi:aoi, dm:dm, org:org},
+                                           function(data){
+      $('div#answer1').text(data);
+    });
+
+    $.post('/WIS_Project/php/answer2.php', {iww:iww, aoi:aoi, dm:dm, org:org},
+                                           function(data){
+      $('div#answer2').text(data);
+    });
+
+    $.post('/WIS_Project/php/answer3.php', {iww:iww, aoi:aoi, dm:dm, org:org},
+                                           function(data){
+      $('div#answer3').text(data);
+    });
+
+    $.post('/WIS_Project/php/answer4.php', {iww:iww, aoi:aoi, dm:dm, org:org},
+                                           function(data){
+      $('div#answer4').text(data);
+    });
+
+    $.post('/WIS_Project/php/answer5.php', {iww:iww, aoi:aoi, dm:dm, org:org},
+                                           function(data){
+      $('div#answer5').text(data);
+    });
+
+
+    /*result.append('You got ' + numCorrect + ' questions out of ' +
                  questions.length + ' right!!!');
-    return score;
+    return score;*/
+
   }
 })();
