@@ -18,11 +18,11 @@
     //correctAnswer: 3
   }, {
     question: "Which of the following best describes you during a group discussion or group decision    making?",
-    choices: ["I gravitate toward groups and constant action, and I tend to think out loud and mostly vocal with my opinions.", "I tend to prefer quiet solitude, time to think before speaking (or acting), and building relationships and trust one-on-one."],
+    choices: ["I tend to prefer quiet solitude, time to think before speaking (or acting), and building relationships and trust one-on-one.", "I gravitate toward groups and constant action, and I tend to think out loud and mostly vocal with my opinions."],
     //correctAnswer: 4
   }, {
       question: "I mostly enjoy,",
-      choices: ["Personal interactions, social gatherings, and sharing my ideas effectively before making decisions.", "Reflection and deep dives into my own inner landscape to research ideas, and I tend to focus deeply on work."],
+      choices: ["Doing whatever I feel doing at that moment and don’t dwell on the consequences.", "Reflection and deep dives into my own inner landscape to research ideas, and I tend to focus deeply on work."],
   }, {
       question: "Do you like to volunteer or involve yourself in new activities offered by your workplace?",
       choices: ["Yes, I love to volunteer!", "If there’s someone else who can do it, I don’t see why I should."],
@@ -31,7 +31,7 @@
       choices: ["I often involve myself in those group chats my co-workers set up, even if its just for the sake of making jokes with my co-workers.", "I rarely reply to the group chats unless very necessary."],
   }, {
       question: "Before I start the day at work, I tend to..",
-      choices: ["Ease into the workday by sorting and planning alone for the first half an hour.", "Rather meet with people and start the day off running. I’m more productive when I can bounce ideas off others during the workday."]
+      choices: ["Rather meet with people and start the day off running. I’m more productive when I can bounce ideas off others during the workday.", "Ease into the workday by sorting and planning alone for the first half an hour."],
   }, {
       questions: "If you are walking on a crowded street, which one do you tend to do?",
       choices: ["Paying attention to your phone as you walk.", "Walk casually and look at your surroundings."]
@@ -179,46 +179,35 @@
     var result = $('<p>',{id: 'question'});
     console.log('lewat var result');
 
-    var sensors = 0;
-    var intuitive = 0;
-    var feelers = 0;
-    var thinkers = 0;
+    var sensor = 0;
+    var feeler = 0;
     var perceiver = 0;
-    var judger = 0;
     var introvert = 0;
-    var extrovert = 0;
 
-    for (var i = 0; i <= 2; i++){
-	    if (selections[i] === questions[i].choices[0]){
-		    sensors++;
-	    }else{
-		    intuitive++;
-	    }
+    for (i = 0; i <= 2; i++){
+      if (selections[i] === 0){
+        sensor += 1;
+      }
     }
 
-    for (var i=3; i<=5; i++){
-	    if (selections[i] === questions[i].choices[0]){
-		    feelers++;
-	    }else{
-		    thinkers++;
-	    }
+    for (i=3; i<=5; i++){
+      if (selections[i] === 0){
+        feeler += 1;
+      }
     }
 
-    for (var i=6; i<=8; i++){
-	    if (selections[i] === questions[i].choices[0]){
-		    perceiver++;
-	    }else{
-		    judger++;
-	    }
+    for (i=6; i<=8; i++){
+      if (selections[i] === 0){
+        perceiver += 1;
+      }
     }
 
-    for (var i=9; i<=11; i++){
-	    if (selections[i] === questions[i].choices[0]){
-		    introvert++;
-	    }else{
-		    extrovert++;
-	    }
+    for (i=9; i<=11; i++){
+      if (selections[i] === 0){
+        introvert += 1;
+      }
     }
+
     console.log('lewat semua for loop');
 
     var iww;
@@ -226,10 +215,28 @@
     var dm;
     var org;
 
+    console.log(sensor);
+    console.log(feeler);
+    console.log(perceiver);
     console.log(introvert);
-    console.log(sensors);
-    console.log(thinkers);
-    console.log(judger);
+
+    if (sensor >= 2){
+        aoi = 0;
+    } else {
+        aoi = 1;
+    }
+
+    if (feeler >= 2){
+       dm = 0;
+    } else {
+        dm = 1;
+    }
+
+    if (perceiver >= 2) {
+        org = 0;
+    } else {
+        org = 1;
+    }
 
     if (introvert >= 2){
         iww = 0;
@@ -237,33 +244,17 @@
         iww = 1;
     }
 
-    if (sensors >= 2){
-        aoi = 0;
-    } else {
-        aoi = 1;
-    }
-
-    if (thinkers >= 2){
-       dm = 0;
-    } else {
-        dm = 1;
-    }
-
-    if (judger >= 2) {
-        org = 0;
-    } else {
-        org = 1;
-    }
     console.log('lewat semua if loop');
     console.log(iww, aoi, dm, org);
 
 
     result.append('You got blablabla');
+    /*
     var para = document.createElement("p");
     var node = document.createTextNode('iww:' + iww + ' aoi: ' + aoi + ' dm:' + dm + ' org:' + org);
     para.appendChild(node);
-    var element = document.getElementById("box");
-    element.appendChild(para);
+    var element = document.getElementById("container");
+    element.appendChild(para);*/
     return result;
 
     
