@@ -33,13 +33,13 @@
       question: "Before I start the day at work, I tend to..",
       choices: ["Rather meet with people and start the day off running. I’m more productive when I can bounce ideas off others during the workday.", "Ease into the workday by sorting and planning alone for the first half an hour."],
   }, {
-      questions: "If you are walking on a crowded street, which one do you tend to do?",
+      question: "If you are walking on a crowded street, which one do you tend to do?",
       choices: ["Paying attention to your phone as you walk.", "Walk casually and look at your surroundings."]
   }, {
-      questions: "Which one best describes yourself when you are in a large gathering or party?",
+      question: "Which one best describes yourself when you are in a large gathering or party?",
       choices: ["Make your own space for yourself.", "Talk to someone around you."]
   }, {
-      questions: "You will work effectively when ...",
+      question: "You will work effectively when ...",
       choices: ["You are in a quiet environment.", "You are in a space full of people / noise."]
   }];
 
@@ -175,9 +175,9 @@
 
   // Computes score and returns a paragraph element to be displayed
   function displayScore() {
-    console.log("inside displayScore");
+    //console.log("inside displayScore");
     var result = $('<p>',{id: 'question'});
-    console.log('lewat var result');
+    //console.log('lewat var result');
 
     var sensor = 0;
     var feeler = 0;
@@ -208,7 +208,7 @@
       }
     }
 
-    console.log('lewat semua for loop');
+    //console.log('lewat semua for loop');
 
     var iww;
     var aoi;
@@ -216,9 +216,9 @@
     var org;
 
 	console.log(introvert);
-    console.log(sensor);
-    console.log(feeler);
-    console.log(perceiver);
+  console.log(sensor);
+  console.log(feeler);
+  console.log(perceiver);
 
     if (sensor >= 2){
         aoi = 0;
@@ -244,31 +244,31 @@
         iww = 1;
     }
 
-    console.log('lewat semua if loop');
+   // console.log('lewat semua if loop');
     console.log(iww, aoi, dm, org);
 
 
-    result.append('You got blablabla');
+   // result.append('You got blablabla');
     /*
     var para = document.createElement("p");
     var node = document.createTextNode('iww:' + iww + ' aoi: ' + aoi + ' dm:' + dm + ' org:' + org);
     para.appendChild(node);
     var element = document.getElementById("container");
     element.appendChild(para);*/
-    return result;
+   // return result;
 
     
-    //$.post('/WIS_Project/php/answer.php', {iww:iww, aoi:aoi, dm:dm, org:org},
-                                           //function(data){
-      //console.log(data);
-      /*var data = JSON.parse(data);
+    $.post('/WIS_Project/php/answer.php', {iww:iww, aoi:aoi, dm:dm, org:org},
+                                           function(data){
+      console.log(data);
+      var data = JSON.parse(data);
       $('div#description').text(data.description);
       $('div#answer1').text(data.answer1);
       $('div#answer2').text(data.answer2);
       $('div#answer3').text(data.answer3);
       $('div#answer4').text(data.answer4);
       $('div#answer5').text(data.answer5);
-    });*/
+    });
 
 
     /*
