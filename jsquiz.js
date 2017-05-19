@@ -177,6 +177,7 @@
   function displayScore() {
     console.log("inside displayScore");
     var result = $('<p>',{id: 'question'});
+    console.log('lewat var result');
 
     var sensors = 0;
     var intuitive = 0;
@@ -190,8 +191,7 @@
     for (var i = 0; i <= 2; i++){
 	    if (selections[i] === questions[i].choices[0]){
 		    sensors++;
-	    }
-	    else{
+	    }else{
 		    intuitive++;
 	    }
     }
@@ -199,8 +199,7 @@
     for (var i=3; i<=5; i++){
 	    if (selections[i] === questions[i].choices[0]){
 		    feelers++;
-	    }
-	    else{
+	    }else{
 		    thinkers++;
 	    }
     }
@@ -208,8 +207,7 @@
     for (var i=6; i<=8; i++){
 	    if (selections[i] === questions[i].choices[0]){
 		    perceiver++;
-	    }
-	    else{
+	    }else{
 		    judger++;
 	    }
     }
@@ -217,53 +215,70 @@
     for (var i=9; i<=11; i++){
 	    if (selections[i] === questions[i].choices[0]){
 		    introvert++;
-	    }
-	    else{
+	    }else{
 		    extrovert++;
 	    }
     }
+    console.log('lewat semua for loop');
 
-      var iww = "1";
-      var aoi = "0";
-      var dm = "1";
-      var org = "0";
+    var iww;
+    var aoi;
+    var dm;
+    var org;
 
-      if (introvert >= 2){
-          iww == "0";
-      } else {
-          iww == "1";
-      }
+    console.log(introvert);
+    console.log(sensors);
+    console.log(thinkers);
+    console.log(judger);
 
-      if (sensors >= 2){
-          aoi == "0";
-      } else {
-          aoi == "1";
-      }
+    if (introvert >= 2){
+        iww = 0;
+    } else {
+        iww = 1;
+    }
 
-      if (thinkers >= 2){
-         dm == "0";
-      } else {
-          dm == "1";
-      }
+    if (sensors >= 2){
+        aoi = 0;
+    } else {
+        aoi = 1;
+    }
 
-      if (judger >= 2) {
-          org == "0";
-      } else {
-          org == "1";
-      }
+    if (thinkers >= 2){
+       dm = 0;
+    } else {
+        dm = 1;
+    }
 
-      console.log(iww, aoi, dm, org);
-    $.post('/WIS_Project/php/answer.php', {iww:iww, aoi:aoi, dm:dm, org:org},
-                                           function(data){
-      console.log(data);
-      var data = JSON.parse(data);
+    if (judger >= 2) {
+        org = 0;
+    } else {
+        org = 1;
+    }
+    console.log('lewat semua if loop');
+    console.log(iww, aoi, dm, org);
+
+
+    result.append('You got blablabla');
+    var para = document.createElement("p");
+    var node = document.createTextNode('iww:' + iww + ' aoi: ' + aoi + ' dm:' + dm + ' org:' + org);
+    para.appendChild(node);
+    var element = document.getElementById("container");
+    element.appendChild(para);
+    return result;
+
+    
+    //$.post('/WIS_Project/php/answer.php', {iww:iww, aoi:aoi, dm:dm, org:org},
+                                           //function(data){
+      //console.log(data);
+      /*var data = JSON.parse(data);
       $('div#description').text(data.description);
       $('div#answer1').text(data.answer1);
       $('div#answer2').text(data.answer2);
       $('div#answer3').text(data.answer3);
       $('div#answer4').text(data.answer4);
       $('div#answer5').text(data.answer5);
-    });
+    });*/
+
 
     /*
     result.append('You got ' + numCorrect + ' questions out of ' +
