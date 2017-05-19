@@ -258,7 +258,7 @@
    // return result;
 
     
-    $.post('/WIS_Project/php/answer.php', {iww:iww, aoi:aoi, dm:dm, org:org},
+    $.post('php/answers.php', {iww:iww, aoi:aoi, dm:dm, org:org},
                                            function(data){
       console.log(data);
       var data = JSON.parse(data);
