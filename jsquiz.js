@@ -262,7 +262,7 @@
     var para = document.createElement("p");
     var node = document.createTextNode('iww:' + iww + ' aoi: ' + aoi + ' dm:' + dm + ' org:' + org);
     para.appendChild(node);
-    var element = document.getElementById("container");
+    var element = document.getElementById("box");
     element.appendChild(para);
     return result;
 
