@@ -109,7 +109,7 @@
       id: 'question'
     });
 
-    var header = $('<h2>Question ' + (index + 1) + ':</h2>');
+    var header = $('<h2 id = "questionh2">Question ' + (index + 1) + '</h2>');
     qElement.append(header);
 
     var question = $('<p>').append(questions[index].question);
@@ -127,7 +127,7 @@
     var item;
     var input = '';
     for (var i = 0; i < questions[index].choices.length; i++) {
-      item = $('<li>');
+      item = $('<li id = "answerlist">');
       input = '<input type="radio" name="answer" value=' + i + ' />';
       input += questions[index].choices[i];
       item.append(input);
@@ -215,10 +215,10 @@
     var dm;
     var org;
 
+	console.log(introvert);
     console.log(sensor);
     console.log(feeler);
     console.log(perceiver);
-    console.log(introvert);
 
     if (sensor >= 2){
         aoi = 0;
