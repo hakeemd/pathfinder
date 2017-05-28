@@ -1,0 +1,52 @@
+html,body
+{
+  height:100%;
+  margin: 0;
+  padding: 0;
+}
+
+nav
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+}
+
+li
+{
+  display: inline;
+  padding: 0 20px;
+  float: left;
+}
+
+.onepage
+{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  top:0;
+  left:0;
+}
+.more
+{
+  display: block;
+  position: relative;
+  bottom: 10px;
+  top: 0;
+  left: 0;
+}
+
+#first
+{
+  background-color: red;
+}
+#second
+{
+  background-color: orange;
+}
+#third
+{
+  background-color: yellow;
+}
