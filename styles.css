@@ -12,11 +12,11 @@ body{
 	margin-top: 100px;
 }
 
-#titleh1{
+.titleh1{
 	color: #a0c1d1;
 }
 
-#desc{
+.desc{
 	font-family: "PierSans-Light";
 	letter-spacing: 2px;
 }
@@ -30,7 +30,7 @@ body{
     background-color: #eeeeee;
     padding: 20px;
     color: #4d4d4d;
-    width: 600px;
+    width: 650px;
     margin: 0 auto;
     border-radius: 10px;
 }
@@ -113,4 +113,53 @@ ul {
     display:none;
     width: 130px;
     text-align: center;
+}
+
+#account{
+	text-align: center;
+	color: #ffffff;
+}
+
+.accountbtn{
+	text-decoration: none;
+	color: #ffffff;
+	font-size: 14pt;
+	text-transform: uppercase;
+	letter-spacing: 2pt;
+	padding: 20px;
+}
+
+.accountbtn:hover{
+	text-decoration: none;
+	color: #a0c1d1;
+}
+
+.line{
+	width: 300px;
+}
+
+.questionlist{
+	font-size: 30pt;
+}
+
+.col-md-6{
+	text-align: center;
+}
+
+#buttondiv{
+	text-align: center;
+}
+
+.defaultbtn{
+	color: #a0c1d1;
+	width: 100px;
+}
+
+.defaultbtn:hover{
+	text-decoration: none;
+}
+
+#join{
+	font-size: 14pt;
+	width: 100px;
 }
