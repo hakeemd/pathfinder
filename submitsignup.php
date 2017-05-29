@@ -10,10 +10,10 @@
 	$pwd = $_POST['pwd'];
 
 
-	$servername = "127.0.0.1";
+	$servername = "localhost";
 	$port = "3306";
 	$username = "root";
-	$password = "";
+	$password = "root";
 	$dbname = "pathfinderdb";
 
 	// Create connection
@@ -23,8 +23,7 @@
     die("Connection failed: " . $conn->connect_error);
 	}
 
-	$sql = "INSERT INTO User (fname, lname, age, hometown, job, email, pwd)
-VALUES ('$FirstName','$LastName','$Age','$Hometown','$Job', '$email', '$pwd');";
+	$sql = "INSERT INTO user (FirstName, LastName, Age, Hometown, Job, Email, Password) VALUES ('$fname', '$lname', '$age', '$hometown', '$job', '$email', '$pwd')";
 
 if ($conn->query($sql) === TRUE) {
     echo "";
