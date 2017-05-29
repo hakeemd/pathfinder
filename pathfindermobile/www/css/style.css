@@ -1,1 +1,209 @@
 /* Empty. Add your own CSS if you like */
+
+/* CSS for Pathfinder Project */
+
+@font-face{
+    font-family: "Pier Sans Bold";
+    src: url('css/fonts/PierSans-Bold.otf') format('otf'),
+    url ('css/fonts/PierSans-Bold.ttf') format('truetype'),
+    url ('css/fonts/PierSans-Bold.woff') format ('woff');
+}
+
+@font-face{
+    font-family: "Pier Sans Medium";
+    src: url('css/fonts/PierSans-Medium.otf') format('otf'),
+    url ('css/fonts/PierSans-Medium.ttf') format('truetype'),
+    url ('css/fonts/PierSans-Medium.woff') format ('woff');
+}
+
+@font-face{
+    font-family: "Pier Sans Light";
+    src: url('css/fonts/PierSans-Light.otf') format('otf'),
+    url ('css/fonts/PierSans-Light.ttf') format('truetype'),
+    url ('css/fonts/PierSans-Light.woff') format ('woff');
+}
+
+@font-face{
+    font-family: "Pier Sans Regular";
+    src: url('css/fonts/PierSans-Regular.otf') format('otf'),
+    url ('css/fonts/PierSans-Regular.ttf') format('truetype'),
+    url ('css/fonts/PierSans-Regular.woff') format ('woff');
+}
+
+body{
+    font-family: "Pier Sans";
+    background-color: #232C33;
+    color: #ffffff;
+    padding: 20px;
+}
+
+#titlecont{
+    font-family: "Pier Sans";
+    margin-top: 100px;
+}
+
+.titleh1{
+    color: #a0c1d1;
+}
+
+.desc{
+    font-family: "PierSans-Light";
+    letter-spacing: 2px;
+}
+
+#questionh2{
+    color:#5a7d7c;
+}
+
+#quiz {
+    text-align: center;
+    background-color: #eeeeee;
+    padding: 20px;
+    color: #4d4d4d;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+#buttons{
+    text-align: center;
+    margin-top: 30px;
+}
+
+#answerlist{
+    list-style: none;
+}
+
+h1{
+    font-size: 40pt;
+}
+
+h3{
+    font-size : 12pt;
+}
+
+.btn-default{
+    height: 40px;
+    font-size: 14pt;
+    font-family: "PierSans-Light";
+    letter-spacing: 3px;
+    width: 100px;
+}
+
+.questionbtn{
+    color: #a0c1d1;
+    width: 100px;
+}
+
+.questionbtn:hover{
+    text-decoration: none;
+}
+
+.button.active {
+    background-color: #F8F8FF;
+    color: #525252;
+}
+
+input[type="radio"]{
+    margin-right:10px;
+}
+
+.button a {
+    text-decoration: none;
+    color: black;
+}
+
+.answerbtn{
+    border-radius: 10px;
+    border-color:#5a7d7c;
+    border: 1px solid;
+    background-color: transparent;
+    color: #5a7d7c;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#description{
+    text-align: center;
+    font-size: 24pt;
+    color: #ffffff;
+}
+
+#answer1, #answer2, #answer3, #answer4, #answer5{
+    text-align: center;
+    font-size: 22pt;
+    color: #ffffff;
+}
+
+#start {
+    display:none;
+    width: 130px;
+    text-align: center;
+}
+
+#account{
+    text-align: center;
+    color: #ffffff;
+}
+
+.accountbtn{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14pt;
+    text-transform: uppercase;
+    letter-spacing: 2pt;
+    padding: 20px;
+}
+
+.accountbtn:hover{
+    text-decoration: none;
+    color: #a0c1d1;
+}
+
+.line{
+    width: 300px;
+}
+
+.questionlist{
+    font-size: 30pt;
+}
+
+.col-md-6{
+    text-align: center;
+}
+
+#buttondiv{
+    text-align: center;
+}
+
+.defaultbtn{
+    color: #a0c1d1;
+    width: 100px;
+}
+
+.defaultbtn:hover{
+    text-decoration: none;
+}
+
+#join{
+    font-size: 14pt;
+    width: 100px;
+}
+
+.col-md-6{
+    color: #000000;
+}
+
+label{
+    font-family: "Pier Sans";
+    color: #ffffff;
+}
+
+.logininfo{
+    text-align: center;
+    font-family: "Pier Sans";
+    margin: 0 auto;
+}
