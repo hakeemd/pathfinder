@@ -1,5 +1,33 @@
 /* CSS for Pathfinder Project */
 
+@font-face{
+	font-family: "Pier Sans Bold";
+	src: url('css/fonts/PierSans-Bold.otf') format('otf'),
+		url ('css/fonts/PierSans-Bold.ttf') format('truetype'),
+		url ('css/fonts/PierSans-Bold.woff') format ('woff');  
+}
+
+@font-face{
+	font-family: "Pier Sans Medium";
+	src: url('css/fonts/PierSans-Medium.otf') format('otf'),
+		url ('css/fonts/PierSans-Medium.ttf') format('truetype'),
+		url ('css/fonts/PierSans-Medium.woff') format ('woff');  
+}
+
+@font-face{
+	font-family: "Pier Sans Light";
+	src: url('css/fonts/PierSans-Light.otf') format('otf'),
+		url ('css/fonts/PierSans-Light.ttf') format('truetype'),
+		url ('css/fonts/PierSans-Light.woff') format ('woff');  
+}
+
+@font-face{
+	font-family: "Pier Sans Regular";
+	src: url('css/fonts/PierSans-Regular.otf') format('otf'),
+		url ('css/fonts/PierSans-Regular.ttf') format('truetype'),
+		url ('css/fonts/PierSans-Regular.woff') format ('woff');  
+}
+
 body{
 	font-family: "Pier Sans";
 	background-color: #232C33;
@@ -162,4 +190,19 @@ ul {
 #join{
 	font-size: 14pt;
 	width: 100px;
+}
+
+.col-md-6{
+	color: #000000;
+}
+
+label{
+	font-family: "Pier Sans";
+	color: #ffffff;
+}
+
+.logininfo{
+	text-align: center;
+	font-family: "Pier Sans";
+	margin: 0 auto;
 }
