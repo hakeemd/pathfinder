@@ -29,14 +29,14 @@
 }
 
 body{
-	font-family: "Pier Sans";
+	font-family: "Pier Sans Regular";
 	background-color: #232C33;
 	color: #ffffff;
 	padding: 20px;
 }
 
 #titlecont{
-	font-family: "Pier Sans";
+	font-family: "Pier Sans Regular";
 	margin-top: 100px;
 }
 
@@ -45,7 +45,7 @@ body{
 }
 
 .desc{
-	font-family: "PierSans-Light";
+	font-family: "Pier Sans Light";
 	letter-spacing: 2px;
 }
 
@@ -83,7 +83,7 @@ h3{
 .btn-default{
 	height: 40px;
 	font-size: 14pt;
-	font-family: "PierSans-Light";
+	font-family: "Pier Sans Light";
 	letter-spacing: 3px;
 	width: 100px;
 }
@@ -141,6 +141,7 @@ ul {
     display:none;
     width: 130px;
     text-align: center;
+    margin-left: 45%;
 }
 
 #account{
@@ -176,6 +177,7 @@ ul {
 
 #buttondiv{
 	text-align: center;
+	margin-top: 30px;
 }
 
 .defaultbtn{
@@ -197,12 +199,32 @@ ul {
 }
 
 label{
-	font-family: "Pier Sans";
+	font-family: "Pier Sans Regular";
 	color: #ffffff;
 }
 
 .logininfo{
+    padding: 20px;
+    color: #4d4d4d;
+    width: 650px;
+    border-radius: 10px;
 	text-align: center;
-	font-family: "Pier Sans";
+	font-family: "Pier Sans Regular";
 	margin: 0 auto;
+	background-color: #eeeeee;
+}
+
+.registerinput{
+
+}
+
+.contact{
+	height: 35px;
+	width: 200px;
+	border-radius: 5px;
+}
+
+#h1title{
+	text-decoration: none;
+	color: #a0c1d1;
 }

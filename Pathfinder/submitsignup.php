@@ -1,36 +1,35 @@
 <?php
 	session_start();
+	include ("db.php");
 
-	
-	$fname = $_POST['fname'];
-	$lname = $_POST['lname'];
-	$age = $_POST['age'];
-	$hometown = $_POST['hometown'];	
-	$job = $_POST['job'];
-	$email = $_POST['email'];
-	$pwd = $_POST['pwd'];
+	$firstname = $_POST["firstname"];
+	$lastname = $_POST["lastname"];
+	$age = $_POST["age"];
+	$hometown = $_POST["hometown"];
+	$job = $_POST["job"];
+	$email = $_POST["email"];
+	$password = $_POST["password"];
 
+	$cistrong = true;
+    $salt = bin2hex(openssl_random_pseudo_bytes(40,$cistrong));
+    $conn = connect();
+    $options = [
+        'cost'=>12,
+        'salt'=> $salt
+    ];
+    $hashed = password_hash($password,PASSWORD_BCRYPT,$options);
 
-	$servername = "localhost";
-	$port = "3306";
-	$username = "root";
-	$password = "root";
-	$dbname = "pathfinderdb";
+    $sql = "INSERT INTO user (FirstName, LastName, Age, Hometown, Job, Email, Password, salt) VALUES (?,?,?,?,?,?,?,?)";
 
-	// Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname,$port);
-	// Check connection
-	if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-	}
+    if($stmt=$conn->prepare($sql)){
+        $stmt->bind_param('ssisssss', $firstname, $lastname, $age, $hometown, $job, $email, $hashed, $salt);
+        $stmt->execute();
+        $conn->close();
+        $_SESSION['firstname'] = $firstname;
+        header("location: index.php");
+    }else{
+        $conn->close();
+        return false;
+    }
 
-	$sql = "INSERT INTO user (FirstName, LastName, Age, Hometown, Job, Email, Password) VALUES ('$fname', '$lname', '$age', '$hometown', '$job', '$email', '$pwd')";
-
-if ($conn->query($sql) === TRUE) {
-    echo "Success!";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-
-$conn->close();
 ?>
