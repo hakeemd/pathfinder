@@ -4,10 +4,10 @@
 	$email = $_POST['email'];
 	$pwd = $_POST['pwd'];
 
-	$servername = "127.0.0.1";
+	$servername = "localhost";
 	$port = "3306";
 	$username = "root";
-	$password = "";
+	$password = "root";
 	$dbname = "pathfinderdb";
 
 	// Create connection
@@ -41,7 +41,7 @@
 	   
 	   if( $count == 1 && $row['pwd']==$password ) {
 	    $_SESSION['user'] = $row['email'];
-	    header("Location: home.php");
+	    header("Location: index.html");
 	   } else {
 	    $errMSG = "Incorrect Credentials, Try again...";
 	   }
@@ -51,7 +51,7 @@
 	}
 
 	if ($conn->query($sql) === TRUE) {
-	    echo "";
+	    echo "Success!";
 	} else {
 	    echo "Error: " . $sql . "<br>" . $conn->error;
 	}

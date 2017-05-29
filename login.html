@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>Pathfinder</title>
-		<link href = "bootstrap/css/bootstrap.min.css" rel = "stylesheet">
+		<link href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel = "stylesheet">
 		<link href = "styles.css" rel = "stylesheet">
 	</head>
 	<body>
@@ -15,24 +15,19 @@
 
 		<form action="submitlogin.php" method="post">
 	        <div id = "logininfo">
-				<div class = "row">
-					<div class = "col-md-12">
-			            <label for = "email">Email:</label>
-			            <br>
-			            <input class = "email" type = "text" name = "email" placeholder = "insert your email-address"><br><br>
-		
-			            <label for = "pwd">Password </label>
-			            <br>
-			            <input class = "passwordconfirm" type = "password" name = "pwd" placeholder = "insert your password">
-					</div>
-				</div>
+
+	            Email: <br>
+	            <input class = "email" type = "text" name = "email" placeholder = "insert your email-address"><br><br>
+
+	            Password <br>
+	            <input class = "passwordconfirm" type = "password" name = "pwd" placeholder = "insert your password">
+	        
 	        </div>
 	    
-	    </form>
-	    	<div id = "buttondiv">
-				<input type="submit" class = "btn btn-default" value="Login">
-	            <div class = "btn btn-default" id = "backhome"><a href = "index.html">Back To Home</a></div>
+	        <div id = "buttondiv">
+	            <input type="submit" class = "buttonlogin" value="Login">
 	        </div>
+	        </form>
 
 		<script type='text/javascript' src='js/jquery-3.2.0.min.js'></script>
 		<script type="text/javascript" src="questions.json"></script>

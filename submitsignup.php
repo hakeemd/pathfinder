@@ -1,5 +1,6 @@
 <?php
 	session_start();
+
 	
 	$fname = $_POST['fname'];
 	$lname = $_POST['lname'];
@@ -26,7 +27,7 @@
 	$sql = "INSERT INTO user (FirstName, LastName, Age, Hometown, Job, Email, Password) VALUES ('$fname', '$lname', '$age', '$hometown', '$job', '$email', '$pwd')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "";
+    echo "Success!";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
