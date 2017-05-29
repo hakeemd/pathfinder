@@ -12,6 +12,17 @@
 		<title>Pathfinder</title>
 		<link href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel = "stylesheet">
 		<link href = "styles.css" rel = "stylesheet">
+		<script>
+		function validateForm() {
+		    var x = document.forms["loginform"]["email"].value;
+		    var atpos = x.indexOf("@");
+		    var dotpos = x.lastIndexOf(".");
+		    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+		        alert("Not a valid e-mail address");
+		        return false;
+		    }
+		}
+		</script>
 	</head>
 	<body>
 		<div id="box">
@@ -21,7 +32,7 @@
 			</div>
    			<br/>
 
-		<form method="post" action="submitlogin.php">
+		<form name="loginform" method="post" action="submitlogin.php" onsubmit="return validateForm();">
 			
 			<?php
 				if(isset($_SESSION['error'])){
