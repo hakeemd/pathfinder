@@ -48,10 +48,10 @@
 				}
 			?>
 
-	            Email: <br>
+	            <span id = "slinfo">Email: <br></span>
 	            <input class = "contact" type = "text" name = "email" placeholder = "insert your email-address"><br><br>
 
-	            Password <br>
+	            <span id = "slinfo">Password <br></span>
 	            <input class = "contact" type = "password" name = "password" placeholder = "insert your password">
 	        
 	        </div>
