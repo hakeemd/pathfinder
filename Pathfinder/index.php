@@ -11,7 +11,7 @@
 	</head>
 	<body>
 		<div id="title">
-			<h1><a href="index.html" id = "h1title">Pathfinder.</a></h1>
+			<h1><a href="index.php" id = "h1title">Pathfinder.</a></h1>
 			<h3 class = "desc">Discover your perfect job that suits you best.</h3>
 			<?php if($firstname != null) { ?>
 				<h4 class = "welcome">Welcome, <?php echo $firstname; ?> </h4><br>

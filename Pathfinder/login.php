@@ -27,7 +27,7 @@
 	<body>
 		<div id="box">
 			<div id="title">
-				<h1><a href = "index.html" id = "h1title">Pathfinder.</a></h1>
+				<h1><a href = "index.php" id = "h1title">Pathfinder.</a></h1>
 			    <h3>Discover your perfect job that suits you best.</h3>
 			</div>
    			<br/>
